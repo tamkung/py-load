@@ -1,6 +1,7 @@
-/a.mp4
+# Build and environment
 /build
-/dist
 /env
-/v.mp4
 /VideoAudioMerger.spec
+
+# Media files
+*.mp4

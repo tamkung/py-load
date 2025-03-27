@@ -319,6 +319,8 @@ class MainWindow(QMainWindow):
             self.merge_thread.cancel()
             self.merge_btn.setEnabled(True)
             self.merge_cancel_btn.setEnabled(False)
+            # ปิดโปรแกรมทันที
+            QApplication.quit()
 
     def merge_finished(self):
         self.merge_btn.setEnabled(True)
