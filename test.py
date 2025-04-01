@@ -25,7 +25,7 @@ class DownloadThread(threading.Thread):
             }
             
             with requests.get(self.url, stream=True, headers=headers) as response:
-                response.raise_for_status()
+            response.raise_for_status()
                 total_size = int(response.headers.get('content-length', 0))
                 block_size = 8192
                 downloaded = 0
@@ -36,8 +36,8 @@ class DownloadThread(threading.Thread):
                             self.status_var.set("ยกเลิกการดาวน์โหลด")
                             return
                             
-                        if chunk:
-                            file.write(chunk)
+                    if chunk:
+                        file.write(chunk)
                             downloaded += len(chunk)
                             if total_size:
                                 progress = int((downloaded / total_size) * 100)
@@ -48,7 +48,7 @@ class DownloadThread(threading.Thread):
                 self.status_var.set("ดาวน์โหลดเสร็จสิ้น")
                 messagebox.showinfo("สำเร็จ", "ดาวน์โหลดเสร็จสิ้น")
 
-        except RequestException as e:
+    except RequestException as e:
             if not self._stop_event.is_set():
                 self.status_var.set("เกิดข้อผิดพลาด")
                 messagebox.showerror("ข้อผิดพลาด", f"เกิดข้อผิดพลาดในการดาวน์โหลด: {str(e)}")
@@ -73,9 +73,9 @@ class MergeThread(threading.Thread):
             if self._stop_event.is_set():
                 self.status_var.set("ยกเลิกการรวมไฟล์")
                 return
-                
-            video_clip = video_clip.set_audio(audio_clip)
-            
+
+    video_clip = video_clip.set_audio(audio_clip)
+
             if self._stop_event.is_set():
                 self.status_var.set("ยกเลิกการรวมไฟล์")
                 return

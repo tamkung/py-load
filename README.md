@@ -67,3 +67,25 @@ pip install PyQt6 requests moviepy pyinstaller
 ```bash
 pyinstaller --onefile --windowed --name "VideoAudioMerger" main.py
 ```
+
+# Bilibili Downloader
+
+โปรแกรมดาวน์โหลดวิดีโอจาก Bilibili พร้อมรวมไฟล์วิดีโอและเสียง
+
+## การติดตั้ง
+
+1. ดาวน์โหลด ffmpeg จาก https://www.gyan.dev/ffmpeg/builds/ 
+2. แตกไฟล์และคัดลอก ffmpeg.exe ไปไว้ในโฟลเดอร์เดียวกับโปรแกรม
+
+## วิธีใช้งาน
+
+1. รันไฟล์ BilibiliDownloader.exe
+2. ใส่ URL ของวิดีโอ Bilibili ที่ต้องการดาวน์โหลด
+3. เลือกโหมดการทำงาน:
+   - โหมดง่าย: ดาวน์โหลดและรวมไฟล์อัตโนมัติ
+   - โหมดขั้นสูง: แยกดาวน์โหลดวิดีโอและเสียง
+
+## หมายเหตุ
+
+- ต้องมี ffmpeg.exe อยู่ในโฟลเดอร์เดียวกับโปรแกรมเพื่อใช้ในการรวมไฟล์
+- สามารถดาวน์โหลด ffmpeg ได้จาก https://www.gyan.dev/ffmpeg/builds/
